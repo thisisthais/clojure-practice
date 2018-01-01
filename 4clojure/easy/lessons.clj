@@ -59,3 +59,35 @@
     (if (= n (count seq))
       seq
       (recur (+ a b) a (conj seq (+ a b))))))
+
+;; 11. Maximum value
+(defn my-max
+  [& args]
+  (last (sort (seq args))))
+
+;; 12. Get the Caps
+(defn only-capitals
+  [string]
+  (apply str (filter)
+    #(Character/isLetter %)
+    string))
+
+;; 13. Duplicate a Sequence
+(defn duplicate
+  [seq]
+  (sort (into seq seq)))
+
+;; 14. Implement range
+(defn my-range
+  [start end]
+  (take (- end start) (iterate inc start)))
+
+;; 15. Compress a Sequence
+(defn compress
+  [seq]
+  (map first (partition-by identity seq)))
+
+;; 16. Factorial Fun
+(defn factorial
+  [n]
+  (apply * (range 1 (inc n))))
